@@ -226,6 +226,15 @@ module.exports = path;
 
 /***/ },
 /* 18 */
+/***/ function(module, exports) {
+
+var path = '/bootstrap/search-select.html';
+var html = "<div class=\"form-group {{::form.htmlClass + ' ' + idClass}} schema-form-select\"\r\n     ng-class=\"{'has-error': form.disableErrorState !== true && hasError(), 'has-success': form.disableSuccessState !== true && hasSuccess(), 'has-feedback': form.feedback !== false}\">\r\n  <label class=\"control-label {{::form.labelHtmlClass}}\" ng-show=\"showTitle()\" for=\"{{::fieldId(true, false)}}\">\r\n    {{form.title}}\r\n  </label>\r\n  <select sf-field-model\r\n          id=\"{{::fieldId(true, false)}}\"\r\n          ng-disabled=\"form.readonly\"\r\n          sf-changed=\"form\"\r\n          class=\"form-control chosen-select {{::form.fieldHtmlClass}}\"\r\n   ui-jq=\"chosen\"\r\n       schema-validate=\"form\"\r\n          ng-options=\"item.value as item.name group by item.group for item in form.titleMap\"\r\n          name=\"{{::fieldId(true, false)}}\">\r\n  </select>\r\n  <div class=\"help-block\" sf-message=\"form.description\"></div>\r\n</div>\r\n";
+window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
+module.exports = path;
+
+/***/ },
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -261,6 +270,8 @@ module.exports = path;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__bootstrap_tabs_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__bootstrap_tabs_html__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__bootstrap_textarea_html__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__bootstrap_textarea_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__bootstrap_textarea_html__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__bootstrap_search_select_html__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__bootstrap_search_select_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__bootstrap_search_select_html__);
 // ngtemplate-loader embeds the html on build
 
 
@@ -372,6 +383,7 @@ function bootstrapDecoratorConfig(
     tabarray: {template: __WEBPACK_IMPORTED_MODULE_13__bootstrap_tabarray_html___default.a, builder: [ sfField, ngModelOptions, ngModel, array, condition ]},
     tabs: {template: __WEBPACK_IMPORTED_MODULE_14__bootstrap_tabs_html___default.a, builder: [ sfField, ngModelOptions, tabs, condition ]},
     textarea: {template: __WEBPACK_IMPORTED_MODULE_15__bootstrap_textarea_html___default.a, builder: defaults},
+    'search-select': {template: __WEBPACK_IMPORTED_MODULE_16__bootstrap_search_select_html___default.a, builder: [ selectPlaceholder ].concat(defaults)},
   }, []);
 };
 
